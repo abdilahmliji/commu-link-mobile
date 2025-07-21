@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useAuth } from '@/contexts/AuthContext';
 import { Send, MessageSquare, Crown, Users } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import BottomNavigation from '@/components/BottomNavigation';
 import { toast } from '@/hooks/use-toast';
 
@@ -30,6 +31,7 @@ const Messages = () => {
     }
   ]);
   const [newMessage, setNewMessage] = useState('');
+  const [selectedRecipient, setSelectedRecipient] = useState<string>('all');
 
   const handleSendMessage = () => {
     if (!newMessage.trim()) {
